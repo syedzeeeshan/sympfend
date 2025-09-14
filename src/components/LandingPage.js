@@ -10,7 +10,6 @@ const LandingPage = () => {
   const navigate = useNavigate();
   const [apiStatus, setApiStatus] = useState(null);
   const [loading, setLoading] = useState(true);
-//   const particlesRef = useRef(null);
 
   useEffect(() => {
     checkBackendConnection();
