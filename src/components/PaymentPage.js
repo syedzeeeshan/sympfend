@@ -29,13 +29,13 @@ const PaymentPage = () => {
     { id: 12, name: "Innovation Panel", type: "Non-Technical" }
   ];
 
-  useEffect(() => {
+ useEffect(() => {
     if (!registrationId) {
-      navigate('/register');
-      return;
+        navigate('/register');
+        return;
     }
     fetchRegistrationData();
-  }, [registrationId, navigate]);
+}, [registrationId, navigate, fetchRegistrationData]);
 
   const fetchRegistrationData = async () => {
     try {
