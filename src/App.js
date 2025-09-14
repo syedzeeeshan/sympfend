@@ -11,7 +11,7 @@ function App() {
 
   useEffect(() => {
     // Test API connection
-    fetch(`${API_URL}/api/health/`)
+    fetch(`${API_URL}api/health/`)
       .then(response => response.json())
       .then(data => {
         setApiStatus(data);
