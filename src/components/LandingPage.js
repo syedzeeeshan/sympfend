@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { apiService } from '../services/api';
 import CircularBrochureGallery from './CircularBrochureGallery';
@@ -11,12 +11,7 @@ const LandingPage = () => {
   const [apiStatus, setApiStatus] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    checkBackendConnection();
-    initGoldParticles();
-  }, []);
-
-  const checkBackendConnection = async () => {
+  const checkBackendConnection = useCallback(async () => {
     try {
       const response = await apiService.checkHealth();
       setApiStatus(response.data);
@@ -25,9 +20,15 @@ const LandingPage = () => {
     } finally {
       setLoading(false);
     }
-  };
+  }, []);
 
-  const initGoldParticles = () => {
+  const initGoldParticles = useCallback(() => {
+    // Remove any existing particles
+    const existingCanvas = document.querySelector('#particles-js canvas');
+    if (existingCanvas) {
+      existingCanvas.remove();
+    }
+
     const script = document.createElement('script');
     script.src = 'https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js';
     script.onload = () => {
@@ -35,14 +36,14 @@ const LandingPage = () => {
         window.particlesJS('particles-js', {
           particles: {
             number: {
-              value: 120,
+              value: 150,
               density: {
                 enable: true,
                 value_area: 800
               }
             },
             color: {
-              value: ['#FFD700', '#FFA500', '#FF8C00', '#FFAA33', '#FFCC00']
+              value: ['#FFD700', '#FFA500', '#FF8C00', '#FFAA33']
             },
             shape: {
               type: ['circle', 'triangle'],
@@ -107,12 +108,6 @@ const LandingPage = () => {
               resize: true
             },
             modes: {
-              grab: {
-                distance: 200,
-                line_linked: {
-                  opacity: 1
-                }
-              },
               bubble: {
                 distance: 250,
                 size: 8,
@@ -123,25 +118,38 @@ const LandingPage = () => {
               repulse: {
                 distance: 300,
                 duration: 0.4
-              },
-              push: {
-                particles_nb: 6
               }
             }
           },
           retina_detect: true
         });
+        
+        console.log('🎉 Particles initialized successfully!');
       }
     };
-    document.body.appendChild(script);
-  };
+    
+    if (!document.querySelector('script[src*="particles.min.js"]')) {
+      document.body.appendChild(script);
+    }
+  }, []);
+
+  useEffect(() => {
+    checkBackendConnection();
+    
+    // Delay particle initialization to ensure DOM is ready
+    const timer = setTimeout(() => {
+      initGoldParticles();
+    }, 100);
+    
+    return () => clearTimeout(timer);
+  }, [checkBackendConnection, initGoldParticles]);
 
   return (
     <div className="landing-page">
-      {/* Gold Particles Container */}
+      {/* Particles Container */}
       <div id="particles-js" className="particles-container"></div>
 
-      {/* Hero Section - Centered ZEHINIX 25 */}
+      {/* Hero Section */}
       <section className="hero-main">
         <div className="hero-content">
           <h1 className="main-title">ZEHINIX</h1>
@@ -157,16 +165,10 @@ const LandingPage = () => {
         </div>
       </section>
 
-      {/* 1. Event Highlights FIRST */}
       <CircularBrochureGallery />
-
-      {/* 2. Timeline SECOND */}
       <Timeline />
-
-      {/* 3. Team Placeholders */}
       <TeamPlaceholders />
 
-      {/* Registration Section */}
       <section className="registration-section">
         <div className="container">
           <h2>Join Zehinix Symposium 2025</h2>

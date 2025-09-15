@@ -688,3 +688,125 @@
     font-size: 1.2rem;
   }
 }
+
+
+/* Particles Background - Enhanced */
+#particles-js {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 1;
+  background: transparent !important;
+  pointer-events: auto;
+}
+
+.particles-container {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 1;
+  background: transparent !important;
+}
+
+/* Landing Page Background */
+.landing-page {
+  position: relative;
+  min-height: 100vh;
+  background: radial-gradient(circle at center, #1a1a1a 0%, #0d1117 100%);
+  overflow-x: hidden;
+}
+
+/* Hero Content Above Particles */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  background: transparent;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero-main {
+  position: relative;
+  z-index: 10;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Enhanced Title Effects */
+.main-title {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900;
+  background: linear-gradient(45deg, #FFD700, #FFA500, #FF8C00, #FFD700);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 3s ease-in-out infinite;
+  text-shadow: 0 0 30px rgba(255, 215, 0, 0.3);
+  margin-bottom: 0.5rem;
+}
+
+.year-title {
+  font-size: clamp(2rem, 6vw, 4rem);
+  font-weight: 700;
+  color: #FFA500;
+  text-shadow: 0 0 20px rgba(255, 165, 0, 0.5);
+  margin-bottom: 1rem;
+}
+
+.hero-tagline {
+  font-size: clamp(0.9rem, 2vw, 1.2rem);
+  color: #ccc;
+  font-style: italic;
+  opacity: 0.9;
+  margin-bottom: 2rem;
+}
+
+/* Gradient Animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Status Indicator */
+.status-indicator {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  z-index: 15;
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-dot.connected {
+  background: #00ff88;
+  box-shadow: 0 0 10px #00ff88;
+}
+
+.status-dot.error {
+  background: #ff4444;
+  box-shadow: 0 0 10px #ff4444;
+}
+
+.status-loading {
+  color: #FFD700;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
