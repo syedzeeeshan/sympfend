@@ -9,127 +9,128 @@ const CircularBrochureGallery = () => {
   // Technical Events
   { 
     id: 1, 
-    title: "Code Hunter", 
+    title: "Paper Presentation", 
     category: "technical",
-    description: "Competitive coding event focusing on logical problem-solving and efficient algorithms.",
-    details: "Duration: 3 hours | Team Size: 1-2 | Prize Pool: ₹25,000",
+    description: "Participants present research papers or innovative ideas in front of judges and peers.",
+    details: "Date: Sep 07, 2025 | Time: Full Day | Venue: Hall",
     frontImage: "/images/tech1_front.jpg", 
     backImage: "/images/tech1_back.jpg",
     color: "#FFD700"
   },
   { 
     id: 2, 
-    title: "Hack Sprint", 
+    title: "Project Expo", 
     category: "technical",
-    description: "Hackathon where participants build innovative solutions in a limited time frame.",
-    details: "Duration: 24 hours | Team Size: 2-4 | Prize Pool: ₹30,000",
+    description: "A showcase where participants exhibit their innovative projects, prototypes, or solutions to real-world problems.",
+    details: "Date: Sep 07, 2025 | Time: Full Day | Venue: Hall",
     frontImage: "/images/tech2_front.jpg", 
     backImage: "/images/tech2_back.jpg",
     color: "#FFD700"
   },
   { 
     id: 3, 
-    title: "AI Bot Wars", 
+    title: "Web Vibe", 
     category: "technical",
-    description: "Competition where teams create AI-powered bots to solve challenges or battle each other.",
-    details: "Duration: 6 hours | Team Size: 2-4 | Prize Pool: ₹40,000",
+    description: "Web development competition where participants build creative and functional web pages or apps in a short time.",
+    details: "Date: Sep 07, 2025 | Time: Morning (2 hrs) | Venue: CC1",
     frontImage: "/images/tech3_front.jpg", 
     backImage: "/images/tech3_back.jpg",
     color: "#FFD700"
   },
   { 
     id: 4, 
-    title: "Circuit Breakers", 
+    title: "Quiz Tronic", 
     category: "technical",
-    description: "Embedded systems and circuit design challenge for electronics enthusiasts.",
-    details: "Duration: 5 hours | Team Size: 2-3 | Prize Pool: ₹35,000",
+    description: "Technical quiz focusing on programming, electronics, computer science, and problem-solving.",
+    details: "Date: Sep 07, 2025 | Time: Morning (1 hr) | Venue: CSE-B 1st Floor",
     frontImage: "/images/tech4_front.jpg", 
     backImage: "/images/tech4_back.jpg",
     color: "#FFD700"
   },
   { 
     id: 5, 
-    title: "Data Hunt", 
+    title: "E-Sports", 
     category: "technical",
-    description: "Data analytics and visualization contest with real-world datasets.",
-    details: "Duration: 4 hours | Team Size: 1-3 | Prize Pool: ₹28,000",
+    description: "Competitive gaming event featuring popular multiplayer video games. Teams or individuals compete for the highest scores.",
+    details: "Date: Sep 09, 2025 | Time: Afternoon (2 hrs) | Venue: CSE-A 3rd Floor",
     frontImage: "/images/tech5_front.jpg", 
     backImage: "/images/tech5_back.jpg",
     color: "#FFD700"
   },
   { 
     id: 6, 
-    title: "Capture The Flag", 
+    title: "Quiz Buzz", 
     category: "technical",
-    description: "Cybersecurity event with real-world hacking challenges and puzzles.",
-    details: "Duration: 8 hours | Team Size: 1-4 | Prize Pool: ₹45,000",
+    description: "Fun and fast-paced quiz competition testing participants’ knowledge on general topics, tech, and current affairs.",
+    details: "Date: Sep 09, 2025 | Time: Afternoon (2.5 hrs) | Venue: CSE-A 1st Floor",
     frontImage: "/images/tech6_front.jpg", 
     backImage: "/images/tech6_back.jpg",
     color: "#FFD700"
   },
-  
-  // Non-Technical Events
   { 
     id: 7, 
-    title: "Idea Storm", 
+    title: "Pixel Lutz", 
+    category: "technical",
+    description: "Digital art or pixel art creation challenge where participants design creative visuals using limited pixels or tools.",
+    details: "Date: Sep 09, 2025 | Time: Afternoon (1 hr) | Venue: CC2",
+    frontImage: "/images/tech7_front.jpg", 
+    backImage: "/images/tech7_back.jpg",
+    color: "#FFD700"
+  },
+  { 
+    id: 8, 
+    title: "D.D.D. (Debug, Design, Develop)", 
+    category: "technical",
+    description: "Coding challenge that tests participants’ ability to debug existing code, design solutions, and develop working programs.",
+    details: "Date: Sep 09, 2025 | Time: Afternoon (2 hrs) | Venue: CSE-B 1st Floor",
+    frontImage: "/images/tech8_front.jpg", 
+    backImage: "/images/tech8_back.jpg",
+    color: "#FFD700"
+  },
+
+  // Non-Technical Events
+  { 
+    id: 9, 
+    title: "Meme Loader", 
     category: "non-technical",
-    description: "Pitch your innovative ideas and present business solutions creatively.",
-    details: "Duration: 2 hours | Team Size: 2-5 | Prize Pool: ₹20,000",
+    description: "A light-hearted event where participants create funny, clever memes on given topics to entertain the audience.",
+    details: "Date: Sep 07, 2025 | Time: Morning (1 hr) | Venue: CC2",
     frontImage: "/images/nontech1_front.jpg", 
     backImage: "/images/nontech1_back.jpg",
     color: "#32CD32"
   },
   { 
-    id: 8, 
-    title: "Design-A-Thon", 
+    id: 10, 
+    title: "Creative Canva", 
     category: "non-technical",
-    description: "Creative UI/UX design event focusing on usability and aesthetics.",
-    details: "Duration: 3 hours | Team Size: 1-2 | Prize Pool: ₹22,000",
+    description: "Design event where participants create stunning posters, digital flyers, or graphics using Canva or similar tools.",
+    details: "Date: Sep 07, 2025 | Time: Morning (1 hr) | Venue: CC1",
     frontImage: "/images/nontech2_front.jpg", 
     backImage: "/images/nontech2_back.jpg",
     color: "#32CD32"
   },
   { 
-    id: 9, 
-    title: "Tech Debate", 
+    id: 11, 
+    title: "Murder Mystery", 
     category: "non-technical",
-    description: "Debate on trending technology topics and their impact on society.",
-    details: "Duration: 1 hour | Team Size: 1 | Prize Pool: ₹15,000",
+    description: "Thrilling event where participants work in teams to solve a fictional crime using clues, logic, and deduction.",
+    details: "Date: Sep 09, 2025 | Time: Morning (1 hr) | Venue: CSE-A 1st Floor",
     frontImage: "/images/nontech3_front.jpg", 
     backImage: "/images/nontech3_back.jpg",
     color: "#32CD32"
   },
   { 
-    id: 10, 
-    title: "Biz Case Challenge", 
+    id: 12, 
+    title: "Treasure Hunt", 
     category: "non-technical",
-    description: "Solve real-world business case studies and propose strategic solutions.",
-    details: "Duration: 4 hours | Team Size: 3-4 | Prize Pool: ₹25,000",
+    description: "Campus-wide puzzle-solving game where teams follow clues, decode riddles, and race to find the hidden treasure.",
+    details: "Date: Sep 09, 2025 | Time: Afternoon (2 hrs) | Venue: Main Block",
     frontImage: "/images/nontech4_front.jpg", 
     backImage: "/images/nontech4_back.jpg",
     color: "#32CD32"
-  },
-  { 
-    id: 11, 
-    title: "Market Maestro", 
-    category: "non-technical",
-    description: "Digital marketing strategy competition with live campaign creation.",
-    details: "Duration: 3 hours | Team Size: 2-3 | Prize Pool: ₹18,000",
-    frontImage: "/images/nontech5_front.jpg", 
-    backImage: "/images/nontech5_back.jpg",
-    color: "#32CD32"
-  },
-  { 
-    id: 12, 
-    title: "Shutter Shots", 
-    category: "non-technical",
-    description: "Photography contest capturing creativity and technology themes.",
-    details: "Duration: 2 hours | Team Size: 1 | Prize Pool: ₹12,000",
-    frontImage: "/images/nontech6_front.jpg", 
-    backImage: "/images/nontech6_back.jpg",
-    color: "#32CD32"
   }
 ];
+
 
   const handleCardClick = (event) => {
     setSelectedEvent(event);
