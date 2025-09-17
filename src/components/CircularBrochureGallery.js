@@ -13,8 +13,8 @@ const CircularBrochureGallery = () => {
     category: "technical",
     description: "Participants present research papers or innovative ideas in front of judges and peers.",
     details: "Date: Sep 07, 2025 | Time: Full Day | Venue: Hall",
-    frontImage: "/images/tech1_front.jpg", 
-    backImage: "/images/tech1_back.jpg",
+    frontImage: "/images/tech1_front.jpeg", 
+    backImage: "/images/tech1_back.jpeg",
     color: "#FFD700"
   },
   { 
@@ -23,8 +23,8 @@ const CircularBrochureGallery = () => {
     category: "technical",
     description: "A showcase where participants exhibit their innovative projects, prototypes, or solutions to real-world problems.",
     details: "Date: Sep 07, 2025 | Time: Full Day | Venue: Hall",
-    frontImage: "/images/tech2_front.jpg", 
-    backImage: "/images/tech2_back.jpg",
+    frontImage: "/images/tech2_front.jpeg", 
+    backImage: "/images/tech2_back.jpeg",
     color: "#FFD700"
   },
   { 
@@ -33,8 +33,8 @@ const CircularBrochureGallery = () => {
     category: "technical",
     description: "Web development competition where participants build creative and functional web pages or apps in a short time.",
     details: "Date: Sep 07, 2025 | Time: Morning (2 hrs) | Venue: CC1",
-    frontImage: "/images/tech3_front.jpg", 
-    backImage: "/images/tech3_back.jpg",
+    frontImage: "/images/tech3_front.jpeg", 
+    backImage: "/images/tech3_back.jpeg",
     color: "#FFD700"
   },
   { 
@@ -43,8 +43,8 @@ const CircularBrochureGallery = () => {
     category: "technical",
     description: "Technical quiz focusing on programming, electronics, computer science, and problem-solving.",
     details: "Date: Sep 07, 2025 | Time: Morning (1 hr) | Venue: CSE-B 1st Floor",
-    frontImage: "/images/tech4_front.jpg", 
-    backImage: "/images/tech4_back.jpg",
+    frontImage: "/images/tech4_front.jpeg", 
+    backImage: "/images/tech4_back.jpeg",
     color: "#FFD700"
   },
   { 
@@ -53,8 +53,8 @@ const CircularBrochureGallery = () => {
     category: "technical",
     description: "Competitive gaming event featuring popular multiplayer video games. Teams or individuals compete for the highest scores.",
     details: "Date: Sep 09, 2025 | Time: Afternoon (2 hrs) | Venue: CSE-A 3rd Floor",
-    frontImage: "/images/tech5_front.jpg", 
-    backImage: "/images/tech5_back.jpg",
+    frontImage: "/images/tech5_front.jpeg", 
+    backImage: "/images/tech5_back.jpeg",
     color: "#FFD700"
   },
   { 
@@ -63,8 +63,8 @@ const CircularBrochureGallery = () => {
     category: "technical",
     description: "Fun and fast-paced quiz competition testing participants’ knowledge on general topics, tech, and current affairs.",
     details: "Date: Sep 09, 2025 | Time: Afternoon (2.5 hrs) | Venue: CSE-A 1st Floor",
-    frontImage: "/images/tech6_front.jpg", 
-    backImage: "/images/tech6_back.jpg",
+    frontImage: "/images/tech6_front.jpeg", 
+    backImage: "/images/tech6_back.jpeg",
     color: "#FFD700"
   },
   { 
@@ -73,8 +73,8 @@ const CircularBrochureGallery = () => {
     category: "technical",
     description: "Digital art or pixel art creation challenge where participants design creative visuals using limited pixels or tools.",
     details: "Date: Sep 09, 2025 | Time: Afternoon (1 hr) | Venue: CC2",
-    frontImage: "/images/tech7_front.jpg", 
-    backImage: "/images/tech7_back.jpg",
+    frontImage: "/images/tech7_front.jpeg", 
+    backImage: "/images/tech7_back.jpeg",
     color: "#FFD700"
   },
   { 
@@ -83,8 +83,8 @@ const CircularBrochureGallery = () => {
     category: "technical",
     description: "Coding challenge that tests participants’ ability to debug existing code, design solutions, and develop working programs.",
     details: "Date: Sep 09, 2025 | Time: Afternoon (2 hrs) | Venue: CSE-B 1st Floor",
-    frontImage: "/images/tech8_front.jpg", 
-    backImage: "/images/tech8_back.jpg",
+    frontImage: "/images/tech8_front.jpeg", 
+    backImage: "/images/tech8_back.jpeg",
     color: "#FFD700"
   },
 
@@ -95,8 +95,8 @@ const CircularBrochureGallery = () => {
     category: "non-technical",
     description: "A light-hearted event where participants create funny, clever memes on given topics to entertain the audience.",
     details: "Date: Sep 07, 2025 | Time: Morning (1 hr) | Venue: CC2",
-    frontImage: "/images/nontech1_front.jpg", 
-    backImage: "/images/nontech1_back.jpg",
+    frontImage: "/images/nontech1_front.jpeg", 
+    backImage: "/images/nontech1_back.jpeg",
     color: "#32CD32"
   },
   { 
@@ -105,8 +105,8 @@ const CircularBrochureGallery = () => {
     category: "non-technical",
     description: "Design event where participants create stunning posters, digital flyers, or graphics using Canva or similar tools.",
     details: "Date: Sep 07, 2025 | Time: Morning (1 hr) | Venue: CC1",
-    frontImage: "/images/nontech2_front.jpg", 
-    backImage: "/images/nontech2_back.jpg",
+    frontImage: "/images/nontech2_front.jpeg", 
+    backImage: "/images/nontech2_back.jpeg",
     color: "#32CD32"
   },
   { 
@@ -115,8 +115,8 @@ const CircularBrochureGallery = () => {
     category: "non-technical",
     description: "Thrilling event where participants work in teams to solve a fictional crime using clues, logic, and deduction.",
     details: "Date: Sep 09, 2025 | Time: Morning (1 hr) | Venue: CSE-A 1st Floor",
-    frontImage: "/images/nontech3_front.jpg", 
-    backImage: "/images/nontech3_back.jpg",
+    frontImage: "/images/nontech3_front.jpeg", 
+    backImage: "/images/nontech3_back.jpeg",
     color: "#32CD32"
   },
   { 
@@ -125,8 +125,8 @@ const CircularBrochureGallery = () => {
     category: "non-technical",
     description: "Campus-wide puzzle-solving game where teams follow clues, decode riddles, and race to find the hidden treasure.",
     details: "Date: Sep 09, 2025 | Time: Afternoon (2 hrs) | Venue: Main Block",
-    frontImage: "/images/nontech4_front.jpg", 
-    backImage: "/images/nontech4_back.jpg",
+    frontImage: "/images/nontech4_front.jpeg", 
+    backImage: "/images/nontech4_back.jpeg",
     color: "#32CD32"
   }
 ];
