@@ -50,7 +50,7 @@ const CircularBrochureGallery = () => {
   { 
     id: 5, 
     title: "E-Sports", 
-    category: "technical",
+    category: "non-technical",
     description: "Competitive gaming event featuring popular multiplayer video games. Teams or individuals compete for the highest scores.",
     details: "Date: Sep 09, 2025 | Time: Afternoon (2 hrs) | Venue: CSE-A 3rd Floor",
     frontImage: "/images/tech5_front.jpeg", 
@@ -60,7 +60,7 @@ const CircularBrochureGallery = () => {
   { 
     id: 6, 
     title: "Quiz Buzz", 
-    category: "technical",
+    category: "non-technical",
     description: "Fun and fast-paced quiz competition testing participants’ knowledge on general topics, tech, and current affairs.",
     details: "Date: Sep 09, 2025 | Time: Afternoon (2.5 hrs) | Venue: CSE-A 1st Floor",
     frontImage: "/images/tech6_front.jpeg", 
