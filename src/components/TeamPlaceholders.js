@@ -51,7 +51,7 @@ const TeamPlaceholders = () => {
       image: "/images/team/muzamil.jpg",
       email: "muzamil@zehinx25.com",
       linkedin: "https://linkedin.com/in/muzamil",
-      bio: "Leading all technical events and programming competitions Mobile:80157 31017",
+      bio: "Leading all technical events and programming competitions.  Mobile:+91 80157-31017",
     },
     {
       id: 7,
