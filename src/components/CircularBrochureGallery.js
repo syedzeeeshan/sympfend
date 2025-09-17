@@ -80,7 +80,7 @@ const CircularBrochureGallery = () => {
   { 
     id: 8, 
     title: "D.2. D. (Dialogue to Delivery)", 
-    category: "technical",
+    category: "non-technical",
     description: "A execiting party game that challenges player to communicate without hearing .",
     details: "Date: Sep 09, 2025 | Time: Afternoon (2 hrs) | Venue: CSE-B 1st Floor",
     frontImage: "/images/tech8_front.jpeg", 
@@ -91,7 +91,7 @@ const CircularBrochureGallery = () => {
   // Non-Technical Events
   { 
     id: 9, 
-    title: "Meme Loader", 
+    title: "Meme Coder", 
     category: "non-technical",
     description: "A light-hearted event where participants create funny, clever memes on given topics to entertain the audience.",
     details: "Date: Sep 07, 2025 | Time: Morning (1 hr) | Venue: CC2",
@@ -102,7 +102,7 @@ const CircularBrochureGallery = () => {
   { 
     id: 10, 
     title: "Creative Canva", 
-    category: "non-technical",
+    category: "technical",
     description: "Design event where participants create stunning posters, digital flyers, or graphics using Canva or similar tools.",
     details: "Date: Sep 07, 2025 | Time: Morning (1 hr) | Venue: CC1",
     frontImage: "/images/nontech2_front.jpeg", 
