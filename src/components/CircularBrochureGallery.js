@@ -69,7 +69,7 @@ const CircularBrochureGallery = () => {
   },
   { 
     id: 7, 
-    title: "Pixel Lutz", 
+    title: "Pixel Cutz", 
     category: "technical",
     description: "Digital art or pixel art creation challenge where participants design creative visuals using limited pixels or tools.",
     details: "Date: Sep 09, 2025 | Time: Afternoon (1 hr) | Venue: CC2",
@@ -79,9 +79,9 @@ const CircularBrochureGallery = () => {
   },
   { 
     id: 8, 
-    title: "D.D.D. (Debug, Design, Develop)", 
+    title: "D.2. D. (Dialogue to Delivery)", 
     category: "technical",
-    description: "Coding challenge that tests participants’ ability to debug existing code, design solutions, and develop working programs.",
+    description: "A execiting party game that challenges player to communicate without hearing .",
     details: "Date: Sep 09, 2025 | Time: Afternoon (2 hrs) | Venue: CSE-B 1st Floor",
     frontImage: "/images/tech8_front.jpeg", 
     backImage: "/images/tech8_back.jpeg",
