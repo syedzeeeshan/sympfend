@@ -155,9 +155,7 @@ const TimeLine = () => {
               >
                 <div className="timeline-content">
                   <div className="timeline-card">
-                    <div className="timeline-marker">
-                      
-                    </div>
+                    
                     <div className="card-header">
                       <h3 className="event-title">{event.title}</h3>
                       <div className="event-meta">
