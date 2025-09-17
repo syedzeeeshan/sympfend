@@ -596,3 +596,25 @@
     padding-top: 60px;
   }
 }
+
+
+.scroll-to-register-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(45deg, #FFD700, #FFA500);
+  color: #1a1a1a;
+  font-weight: 700;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  z-index: 50;
+  box-shadow: 0 5px 15px rgba(255, 215, 0, 0.5);
+  transition: background-color 0.3s ease;
+}
+
+.scroll-to-register-btn:hover {
+  background: linear-gradient(45deg, #FFAA00, #FF8800);
+}
+
