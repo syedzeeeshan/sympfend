@@ -70,7 +70,7 @@ const CircularBrochureGallery = () => {
   { 
     id: 7, 
     title: "Pixel Cutz", 
-    category: "technical",
+    category: "non-technical",
     description: "Digital art or pixel art creation challenge where participants design creative visuals using limited pixels or tools.",
     details: "Date: Sep 09, 2025 | Time: Afternoon (1 hr) | Venue: CC2",
     frontImage: "/images/tech7_front.jpeg", 
@@ -92,7 +92,7 @@ const CircularBrochureGallery = () => {
   { 
     id: 9, 
     title: "Meme Coder", 
-    category: "non-technical",
+    category: "technical",
     description: "A light-hearted event where participants create funny, clever memes on given topics to entertain the audience.",
     details: "Date: Sep 07, 2025 | Time: Morning (1 hr) | Venue: CC2",
     frontImage: "/images/nontech1_front.jpeg", 
