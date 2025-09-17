@@ -34,7 +34,7 @@ const TimeLine = () => {
     },
     { 
       id: 4, 
-      title: "Meme Loader", 
+      title: "Meme Coder", 
       date: "Sep 07, 2025", 
       time: "Morning (1 hr)", 
       description: "A light-hearted event where participants create funny, clever memes on given topics to entertain the audience. Venue: CC2",
