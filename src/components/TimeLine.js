@@ -1,95 +1,183 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/Timeline.css';
 
-const Timeline = () => {
-  const [visibleItems, setVisibleItems] = useState(new Set());
-  const [progressHeight, setProgressHeight] = useState(0);
-  const timelineRef = useRef();
+const TimeLine = () => {
+  const [visibleEvents, setVisibleEvents] = useState([]);
 
   const events = [
-    { id: 1, time: "09:00 AM", label: "Opening Ceremony", description: "Welcome & Registration", icon: "🎊", color: "#ff4444" },
-    { id: 2, time: "09:30 AM", label: "Keynote Address", description: "Future of Technology", icon: "🎤", color: "#ff6600" },
-    { id: 3, time: "10:00 AM", label: "AI Workshop", description: "Hands-on AI Development", icon: "🤖", color: "#ff8800" },
-    { id: 4, time: "11:00 AM", label: "Coffee Break", description: "Networking & Refreshments", icon: "☕", color: "#ffaa00" },
-    { id: 5, time: "11:30 AM", label: "Blockchain Summit", description: "Decentralized Technologies", icon: "⛓️", color: "#ffcc00" },
-    { id: 6, time: "12:30 PM", label: "Lunch Break", description: "Networking Lunch", icon: "🍽️", color: "#ccff00" },
-    { id: 7, time: "01:30 PM", label: "Web3 Workshop", description: "Next-gen Development", icon: "🌐", color: "#88ff00" },
-    { id: 8, time: "02:30 PM", label: "Startup Pitches", description: "Entrepreneur Showcase", icon: "🚀", color: "#44ff00" },
-    { id: 9, time: "03:30 PM", label: "Panel Discussion", description: "Industry Leaders", icon: "👥", color: "#00ff44" },
-    { id: 10, time: "04:30 PM", label: "Awards Ceremony", description: "Recognition & Prizes", icon: "🏆", color: "#00ff88" },
-    { id: 11, time: "05:00 PM", label: "Closing Remarks", description: "Thank You & Next Steps", icon: "🎯", color: "#00ffcc" },
-    { id: 12, time: "05:30 PM", label: "After Party", description: "Celebration & Music", icon: "🎉", color: "#ff4444" }
+    { 
+      id: 1, 
+      title: "Registration Opens", 
+      date: "Oct 1, 2025", 
+      time: "09:00 AM", 
+      description: "Registration portal goes live for all participants",
+      category: "non-technical",
+      icon: "📝"
+    },
+    { 
+      id: 2, 
+      title: "Code Quest", 
+      date: "Oct 15, 2025", 
+      time: "10:00 AM", 
+      description: "Competitive programming challenge with algorithmic problems",
+      category: "technical",
+      icon: "💻"
+    },
+    { 
+      id: 3, 
+      title: "Web Wizard Competition", 
+      date: "Oct 15, 2025", 
+      time: "11:30 AM", 
+      description: "Full-stack web development competition",
+      category: "technical",
+      icon: "🌐"
+    },
+    { 
+      id: 4, 
+      title: "Innovation Pitch", 
+      date: "Oct 15, 2025", 
+      time: "02:00 PM", 
+      description: "Business idea presentation competition",
+      category: "non-technical",
+      icon: "🚀"
+    },
+    { 
+      id: 5, 
+      title: "AI Innovation Challenge", 
+      date: "Oct 15, 2025", 
+      time: "03:30 PM", 
+      description: "Machine learning and AI project showcase",
+      category: "technical",
+      icon: "🤖"
+    },
+    { 
+      id: 6, 
+      title: "Creative Design Studio", 
+      date: "Oct 15, 2025", 
+      time: "04:30 PM", 
+      description: "UI/UX design competition showcasing creativity",
+      category: "non-technical",
+      icon: "🎨"
+    },
+    { 
+      id: 7, 
+      title: "Circuit Master", 
+      date: "Oct 16, 2025", 
+      time: "09:30 AM", 
+      description: "Hardware design and embedded systems challenge",
+      category: "technical",
+      icon: "⚡"
+    },
+    { 
+      id: 8, 
+      title: "Tech Talk Marathon", 
+      date: "Oct 16, 2025", 
+      time: "11:00 AM", 
+      description: "Public speaking competition on technology trends",
+      category: "non-technical",
+      icon: "🎤"
+    },
+    { 
+      id: 9, 
+      title: "Data Analytics Pro", 
+      date: "Oct 16, 2025", 
+      time: "01:00 PM", 
+      description: "Big data analysis and visualization competition",
+      category: "technical",
+      icon: "📊"
+    },
+    { 
+      id: 10, 
+      title: "Case Study Challenge", 
+      date: "Oct 16, 2025", 
+      time: "02:30 PM", 
+      description: "Business case analysis and strategic problem-solving",
+      category: "non-technical",
+      icon: "📋"
+    },
+    { 
+      id: 11, 
+      title: "Cyber Security Challenge", 
+      date: "Oct 16, 2025", 
+      time: "04:00 PM", 
+      description: "Ethical hacking and cybersecurity CTF challenges",
+      category: "technical",
+      icon: "🔒"
+    },
+    { 
+      id: 12, 
+      title: "Awards & Closing Ceremony", 
+      date: "Oct 16, 2025", 
+      time: "06:00 PM", 
+      description: "Grand finale with awards distribution and networking",
+      category: "non-technical",
+      icon: "🏆"
+    }
   ];
 
+  // Intersection Observer for scroll animations
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            const index = parseInt(entry.target.dataset.index);
-            setVisibleItems(prev => new Set([...prev, index]));
-            
-            // Update progress bar
-            const progress = ((index + 1) / events.length) * 100;
-            setProgressHeight(Math.max(progress, progressHeight));
+            const eventId = parseInt(entry.target.dataset.eventId);
+            setVisibleEvents(prev => [...new Set([...prev, eventId])]);
           }
         });
       },
-      { 
-        threshold: 0.5,
-        rootMargin: '-50px 0px -50px 0px'
-      }
+      { threshold: 0.3 }
     );
 
     const timelineItems = document.querySelectorAll('.timeline-item');
-    timelineItems.forEach((item, index) => {
-      item.dataset.index = index;
-      observer.observe(item);
-    });
+    timelineItems.forEach(item => observer.observe(item));
 
     return () => observer.disconnect();
-  }, [events.length, progressHeight]);
+  }, []);
 
   return (
-    <section className="timeline-section" ref={timelineRef}>
+    <section className="timeline-section">
       <div className="container">
-        <h2 className="timeline-title">Event Timeline</h2>
-        <p className="timeline-description">A full day of innovation, learning, and networking</p>
+        <h2 className="section-title">Zehinex 25 Event Timeline</h2>
+        <p className="section-subtitle">Technical events on the right, Non-technical events on the left</p>
         
-        <div className="timeline">
+        <div className="timeline-container">
           <div className="timeline-line"></div>
-          <div 
-            className="timeline-progress" 
-            style={{ height: `${progressHeight}%` }}
-          ></div>
           
-          {events.map((event, index) => (
-            <div 
-              key={event.id} 
-              className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'} ${
-                visibleItems.has(index) ? 'animate-in' : ''
-              }`}
-              style={{ 
-                animationDelay: `${index * 0.1}s`,
-                '--event-color': event.color
-              }}
-            >
-              <div className="timeline-dot" style={{ backgroundColor: event.color }}>
-                <span className="timeline-icon">{event.icon}</span>
-              </div>
-              <div className="timeline-content">
-                <div className="timeline-time" style={{ color: event.color }}>
-                  {event.time}
+          {events.map((event, index) => {
+            const isLeft = index % 2 === 0;
+            const side = isLeft ? 'left' : 'right';
+            
+            return (
+              <div 
+                key={event.id}
+                className={`timeline-item ${side} ${visibleEvents.includes(event.id) ? 'visible' : ''} ${event.category === 'technical' ? 'tech' : 'non-tech'}`}
+                data-event-id={event.id}
+              >
+                <div className="timeline-content">
+                  <div className="timeline-card">
+                    <div className="timeline-marker">
+                      <span className="timeline-icon">{event.icon}</span>
+                    </div>
+                    <div className="card-header">
+                      <h3 className="event-title">{event.title}</h3>
+                      <div className="event-meta">
+                        <span className="event-date">{event.date}</span>
+                        <span className="event-time">{event.time}</span>
+                      </div>
+                    </div>
+                    <div className="card-body">
+                      <p className="event-description">{event.description}</p>
+                    </div>
+                  </div>
                 </div>
-                <div className="timeline-label">{event.label}</div>
-                <div className="timeline-description">{event.description}</div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>
   );
 };
 
-export default Timeline;
+export default TimeLine;

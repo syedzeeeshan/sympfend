@@ -3,268 +3,182 @@ import '../styles/CircularBrochureGallery.css';
 
 const CircularBrochureGallery = () => {
   const [selectedEvent, setSelectedEvent] = useState(null);
-  const [isFlipped, setIsFlipped] = useState(false);
+  const [flipped, setFlipped] = useState(false);
 
-  // 12 Events: 6 Technical + 6 Non-Technical
   const events = [
-    // Technical Events (1-6)
+    // Technical Events
     { 
       id: 1, 
-      title: "AI Workshop", 
-      type: "technical", 
-      icon: "🤖", 
-      description: "Hands-on AI development",
-      page1: {
-        title: "AI Fundamentals & Machine Learning",
-        content: "Discover the core concepts of artificial intelligence, explore different types of machine learning algorithms, and understand how AI is transforming industries. Learn about neural networks, deep learning, and practical applications in real-world scenarios.",
-        image: "🧠"
-      },
-      page2: {
-        title: "Build Your First AI Model", 
-        content: "Step-by-step hands-on workshop to create, train, and deploy your first AI model using popular frameworks like TensorFlow and PyTorch. Includes practical coding exercises and model optimization techniques.",
-        image: "⚙️"
-      }
+      title: "Code Quest", 
+      category: "technical",
+      description: "Competitive programming challenge featuring algorithmic problem solving and data structures.",
+      details: "Duration: 3 hours | Team Size: 1-2 | Prize Pool: ₹25,000",
+      frontImage: "/images/tech1_front.jpg", 
+      backImage: "/images/tech1_back.jpg",
+      color: "#FFD700"
     },
     { 
       id: 2, 
-      title: "Blockchain Summit", 
-      type: "technical", 
-      icon: "⛓️", 
-      description: "Decentralized technology",
-      page1: {
-        title: "Blockchain Architecture & Consensus",
-        content: "Understanding distributed ledgers, consensus mechanisms, and the fundamental principles that make blockchain technology revolutionary. Explore different blockchain networks and their unique characteristics.",
-        image: "🏗️"
-      },
-      page2: {
-        title: "Smart Contracts & DeFi Applications",
-        content: "Dive into smart contract development, decentralized finance protocols, and building secure applications on blockchain networks. Learn Solidity programming and best practices.",
-        image: "💰"
-      }
+      title: "Web Wizard", 
+      category: "technical",
+      description: "Full-stack web development competition showcasing modern frameworks and technologies.",
+      details: "Duration: 4 hours | Team Size: 2-3 | Prize Pool: ₹30,000",
+      frontImage: "/images/tech2_front.jpg", 
+      backImage: "/images/tech2_back.jpg",
+      color: "#FFD700"
     },
     { 
       id: 3, 
-      title: "Web3 Development", 
-      type: "technical", 
-      icon: "🌐", 
-      description: "Next-gen web development",
-      page1: {
-        title: "Web3 Technologies & Framework",
-        content: "Introduction to decentralized web technologies, IPFS, MetaMask integration, and the paradigm shift from Web2 to Web3. Explore decentralized storage and identity management.",
-        image: "🔗"
-      },
-      page2: {
-        title: "Building Decentralized Applications",
-        content: "Hands-on workshop for creating decentralized applications using React, Web3.js, and modern development tools. Build a complete dApp from scratch.",
-        image: "🛠️"
-      }
+      title: "AI Innovation", 
+      category: "technical",
+      description: "Machine learning and artificial intelligence project showcase with real-world applications.",
+      details: "Duration: 6 hours | Team Size: 2-4 | Prize Pool: ₹40,000",
+      frontImage: "/images/tech3_front.jpg", 
+      backImage: "/images/tech3_back.jpg",
+      color: "#FFD700"
     },
     { 
       id: 4, 
-      title: "Cybersecurity Lab", 
-      type: "technical", 
-      icon: "🔐", 
-      description: "Security best practices",
-      page1: {
-        title: "Threat Analysis & Prevention",
-        content: "Learn to identify, analyze, and prevent common cyber threats including malware, phishing, and social engineering attacks. Understanding security frameworks and risk assessment.",
-        image: "🛡️"
-      },
-      page2: {
-        title: "Penetration Testing Techniques",
-        content: "Practical penetration testing methodologies, vulnerability assessment, and ethical hacking techniques. Hands-on lab exercises with security tools.",
-        image: "🔍"
-      }
+      title: "Circuit Master", 
+      category: "technical",
+      description: "Hardware design and embedded systems programming challenge.",
+      details: "Duration: 5 hours | Team Size: 2-3 | Prize Pool: ₹35,000",
+      frontImage: "/images/tech4_front.jpg", 
+      backImage: "/images/tech4_back.jpg",
+      color: "#FFD700"
     },
     { 
       id: 5, 
-      title: "Cloud Computing", 
-      type: "technical", 
-      icon: "☁️", 
-      description: "Scalable infrastructure",
-      page1: {
-        title: "Cloud Architecture Patterns",
-        content: "Design patterns for scalable cloud infrastructure, microservices architecture, and best practices for cloud-native applications. AWS, Azure, and Google Cloud platforms.",
-        image: "🏛️"
-      },
-      page2: {
-        title: "DevOps & Container Orchestration",
-        content: "Container orchestration with Kubernetes, CI/CD pipelines, and implementing DevOps practices in cloud environments. Docker, Jenkins, and automation tools.",
-        image: "🚀"
-      }
+      title: "Data Analytics Pro", 
+      category: "technical",
+      description: "Big data analysis and visualization competition using modern tools and techniques.",
+      details: "Duration: 4 hours | Team Size: 1-3 | Prize Pool: ₹28,000",
+      frontImage: "/images/tech5_front.jpg", 
+      backImage: "/images/tech5_back.jpg",
+      color: "#FFD700"
     },
     { 
       id: 6, 
-      title: "Data Science", 
-      type: "technical", 
-      icon: "📊", 
-      description: "Analytics and insights",
-      page1: {
-        title: "Data Analysis Methodologies",
-        content: "Statistical analysis, data visualization techniques, and using Python/R for extracting meaningful insights from complex datasets. Pandas, NumPy, and Matplotlib.",
-        image: "📈"
-      },
-      page2: {
-        title: "Machine Learning Applications",
-        content: "Implementing machine learning algorithms for predictive analytics, classification, and clustering. Real-world case studies and project implementation.",
-        image: "🎯"
-      }
+      title: "Cyber Security Challenge", 
+      category: "technical",
+      description: "Ethical hacking and cybersecurity awareness competition with CTF challenges.",
+      details: "Duration: 8 hours | Team Size: 1-4 | Prize Pool: ₹45,000",
+      frontImage: "/images/tech6_front.jpg", 
+      backImage: "/images/tech6_back.jpg",
+      color: "#FFD700"
     },
     
-    // Non-Technical Events (7-12)
+    // Non-Technical Events
     { 
       id: 7, 
-      title: "Startup Pitch", 
-      type: "non-technical", 
-      icon: "🚀", 
-      description: "Entrepreneur showcase",
-      page1: {
-        title: "Business Model Innovation",
-        content: "Learn how to develop innovative business models, identify market opportunities, and create value propositions that resonate with customers and investors.",
-        image: "💡"
-      },
-      page2: {
-        title: "Investor Presentation Skills",
-        content: "Master the art of pitching to investors, crafting compelling presentations, and telling your startup story effectively. Learn what investors look for.",
-        image: "🎤"
-      }
+      title: "Innovation Pitch", 
+      category: "non-technical",
+      description: "Business idea presentation competition focusing on entrepreneurship and innovation.",
+      details: "Duration: 2 hours | Team Size: 2-5 | Prize Pool: ₹20,000",
+      frontImage: "/images/nontech1_front.jpg", 
+      backImage: "/images/nontech1_back.jpg",
+      color: "#32CD32"
     },
     { 
       id: 8, 
-      title: "Leadership Talk", 
-      type: "non-technical", 
-      icon: "👑", 
-      description: "Industry insights",
-      page1: {
-        title: "Leadership in Tech Industry",
-        content: "Insights from industry leaders on navigating the tech landscape, making strategic decisions, and driving innovation in fast-paced environments.",
-        image: "🌟"
-      },
-      page2: {
-        title: "Building High-Performing Teams",
-        content: "Learn how to recruit, motivate, and retain top talent. Understand team dynamics, communication strategies, and creating a culture of innovation.",
-        image: "🤝"
-      }
+      title: "Creative Design Studio", 
+      category: "non-technical",
+      description: "UI/UX design competition showcasing creativity and user experience principles.",
+      details: "Duration: 3 hours | Team Size: 1-2 | Prize Pool: ₹22,000",
+      frontImage: "/images/nontech2_front.jpg", 
+      backImage: "/images/nontech2_back.jpg",
+      color: "#32CD32"
     },
     { 
       id: 9, 
-      title: "Design Thinking", 
-      type: "non-technical", 
-      icon: "🎨", 
-      description: "Creative problem solving",
-      page1: {
-        title: "User-Centered Design Process",
-        content: "Explore the design thinking methodology, understand user needs, and learn how to approach problem-solving from a human-centered perspective.",
-        image: "👥"
-      },
-      page2: {
-        title: "Prototyping & Iteration",
-        content: "Hands-on workshop on rapid prototyping, user testing, and iterative design. Learn to fail fast and improve continuously.",
-        image: "🔄"
-      }
+      title: "Tech Talk Marathon", 
+      category: "non-technical",
+      description: "Public speaking competition on technology trends and future innovations.",
+      details: "Duration: 1 hour | Team Size: 1 | Prize Pool: ₹15,000",
+      frontImage: "/images/nontech3_front.jpg", 
+      backImage: "/images/nontech3_back.jpg",
+      color: "#32CD32"
     },
     { 
       id: 10, 
-      title: "Career Growth", 
-      type: "non-technical", 
-      icon: "📈", 
-      description: "Professional development",
-      page1: {
-        title: "Strategic Career Planning",
-        content: "Develop a strategic approach to career advancement, identify growth opportunities, and create a roadmap for professional success in the tech industry.",
-        image: "🗺️"
-      },
-      page2: {
-        title: "Skill Development Roadmap",
-        content: "Learn how to identify skill gaps, create learning plans, and stay relevant in the rapidly evolving tech landscape. Continuous learning strategies.",
-        image: "🎓"
-      }
+      title: "Case Study Challenge", 
+      category: "non-technical",
+      description: "Business case analysis and strategic problem-solving competition.",
+      details: "Duration: 4 hours | Team Size: 3-4 | Prize Pool: ₹25,000",
+      frontImage: "/images/nontech4_front.jpg", 
+      backImage: "/images/nontech4_back.jpg",
+      color: "#32CD32"
     },
     { 
       id: 11, 
-      title: "Networking Hub", 
-      type: "non-technical", 
-      icon: "🤝", 
-      description: "Connect and collaborate",
-      page1: {
-        title: "Building Professional Networks",
-        content: "Master the art of networking, building meaningful professional relationships, and leveraging your network for career and business opportunities.",
-        image: "🌐"
-      },
-      page2: {
-        title: "Collaboration Opportunities",
-        content: "Explore partnership opportunities, learn how to identify potential collaborators, and create mutually beneficial professional relationships.",
-        image: "🤜🤛"
-      }
+      title: "Digital Marketing Mastery", 
+      category: "non-technical",
+      description: "Social media strategy and digital marketing campaign development competition.",
+      details: "Duration: 3 hours | Team Size: 2-3 | Prize Pool: ₹18,000",
+      frontImage: "/images/nontech5_front.jpg", 
+      backImage: "/images/nontech5_back.jpg",
+      color: "#32CD32"
     },
     { 
       id: 12, 
-      title: "Innovation Panel", 
-      type: "non-technical", 
-      icon: "💡", 
-      description: "Future perspectives",
-      page1: {
-        title: "Technology Trends & Insights",
-        content: "Explore emerging technology trends, future predictions, and how they will impact industries and society. Insights from thought leaders and innovators.",
-        image: "🔮"
-      },
-      page2: {
-        title: "Industry Transformation",
-        content: "Understanding how digital transformation is reshaping industries, creating new opportunities, and the skills needed for the future workforce.",
-        image: "🌅"
-      }
+      title: "Photography Showcase", 
+      category: "non-technical",
+      description: "Tech-themed photography competition capturing innovation and creativity.",
+      details: "Duration: 2 hours | Team Size: 1 | Prize Pool: ₹12,000",
+      frontImage: "/images/nontech6_front.jpg", 
+      backImage: "/images/nontech6_back.jpg",
+      color: "#32CD32"
     }
   ];
 
-  const openEvent = (event) => {
+  const handleCardClick = (event) => {
     setSelectedEvent(event);
-    setIsFlipped(false);
+    setFlipped(false);
   };
 
-  const closeModal = () => {
+  const handleModalClose = () => {
     setSelectedEvent(null);
-    setIsFlipped(false);
+    setFlipped(false);
   };
 
-  const flipCard = () => {
-    setIsFlipped(!isFlipped);
+  const handleFlip = () => {
+    setFlipped(!flipped);
   };
 
-  // Separate technical and non-technical events
-  const technicalEvents = events.filter(event => event.type === 'technical');
-  const nonTechnicalEvents = events.filter(event => event.type === 'non-technical');
+  const technicalEvents = events.filter(e => e.category === "technical");
+  const nonTechnicalEvents = events.filter(e => e.category === "non-technical");
 
   return (
-    <section className="circular-brochure-gallery">
+    <section className="brochure-gallery">
       <div className="container">
-        <h2>Event Highlights</h2>
-        <p className="section-description">
-          Choose from technical workshops and engaging non-technical sessions
-        </p>
+        <h2 className="section-title">Event Highlights</h2>
+        <p className="section-subtitle">Click on any event card to view detailed brochure</p>
         
         {/* Technical Events Section */}
-        <div className="event-category">
-          <h3 className="category-title technical">
-            <span className="category-icon">🔧</span>
-            Technical Events
-          </h3>
-          <div className="circular-grid">
-            {technicalEvents.map((event, index) => (
+        <div className="events-category">
+          <h3 className="category-title technical">🔧 Technical Events</h3>
+          <div className="events-grid">
+            {technicalEvents.map((event) => (
               <div 
                 key={event.id} 
-                className="circular-item technical"
-                onClick={() => openEvent(event)}
-                style={{ animationDelay: `${index * 0.15}s` }}
+                className="event-card technical"
+                onClick={() => handleCardClick(event)}
               >
-                <div className="circular-button">
-                  <div className="event-content">
-                    <div className="event-icon">{event.icon}</div>
-                    <div className="event-number">{event.id}</div>
+                <div className="event-image">
+                  <img
+                    src={event.frontImage}
+                    alt={`${event.title} Preview`}
+                    onError={(e) => {
+                      e.target.src = `https://via.placeholder.com/280x200/${event.color.slice(1)}/1a1a1a?text=${event.title.replace(/\s+/g, '+')}`;
+                    }}
+                  />
+                  <div className="event-overlay">
+                    <span>Click to View Details</span>
                   </div>
                 </div>
-                <div className="item-label">
-                  <h4>{event.title}</h4>
-                  <p>{event.description}</p>
+                <div className="event-info">
+                  <h4 className="event-title">{event.title}</h4>
+                  <p className="event-short-desc">{event.description.substring(0, 60)}...</p>
                 </div>
               </div>
             ))}
@@ -272,28 +186,30 @@ const CircularBrochureGallery = () => {
         </div>
 
         {/* Non-Technical Events Section */}
-        <div className="event-category">
-          <h3 className="category-title non-technical">
-            <span className="category-icon">🎯</span>
-            Non-Technical Events
-          </h3>
-          <div className="circular-grid">
-            {nonTechnicalEvents.map((event, index) => (
+        <div className="events-category">
+          <h3 className="category-title non-technical">🎨 Non-Technical Events</h3>
+          <div className="events-grid">
+            {nonTechnicalEvents.map((event) => (
               <div 
                 key={event.id} 
-                className="circular-item non-technical"
-                onClick={() => openEvent(event)}
-                style={{ animationDelay: `${(index + 6) * 0.15}s` }}
+                className="event-card non-technical"
+                onClick={() => handleCardClick(event)}
               >
-                <div className="circular-button">
-                  <div className="event-content">
-                    <div className="event-icon">{event.icon}</div>
-                    <div className="event-number">{event.id}</div>
+                <div className="event-image">
+                  <img
+                    src={event.frontImage}
+                    alt={`${event.title} Preview`}
+                    onError={(e) => {
+                      e.target.src = `https://via.placeholder.com/280x200/${event.color.slice(1)}/1a1a1a?text=${event.title.replace(/\s+/g, '+')}`;
+                    }}
+                  />
+                  <div className="event-overlay">
+                    <span>Click to View Details</span>
                   </div>
                 </div>
-                <div className="item-label">
-                  <h4>{event.title}</h4>
-                  <p>{event.description}</p>
+                <div className="event-info">
+                  <h4 className="event-title">{event.title}</h4>
+                  <p className="event-short-desc">{event.description.substring(0, 60)}...</p>
                 </div>
               </div>
             ))}
@@ -301,43 +217,47 @@ const CircularBrochureGallery = () => {
         </div>
       </div>
 
-      {/* Enhanced Card Flip Modal */}
+      {/* Modal for Detailed View */}
       {selectedEvent && (
-        <div className="modal-overlay" onClick={closeModal}>
+        <div className="modal-overlay" onClick={handleModalClose}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="close-btn" onClick={closeModal} title="Close">×</button>
+            <button className="modal-close" onClick={handleModalClose}>
+              ✕
+            </button>
             
-            <div className={`flip-card ${isFlipped ? 'flipped' : ''}`}>
-              <div className="flip-card-inner">
-                {/* Front Page */}
-                <div className="flip-card-front" onClick={flipCard}>
-                  <div className="page-header">
-                    <div className="page-image">{selectedEvent.page1.image}</div>
-                    <h3>{selectedEvent.page1.title}</h3>
-                    <div className="page-indicator">Page 1 of 2</div>
+            <div className="brochure-viewer">
+              <h3 className="modal-title">{selectedEvent.title}</h3>
+              
+              <div className="brochure-container">
+                <div className={`brochure-card-large ${flipped ? 'flipped' : ''}`}>
+                  <div className="brochure-front-large">
+                    <img
+                      src={selectedEvent.frontImage}
+                      alt={`${selectedEvent.title} Front Page`}
+                      onError={(e) => {
+                        e.target.src = `https://via.placeholder.com/400x500/${selectedEvent.color.slice(1)}/1a1a1a?text=${selectedEvent.title.replace(/\s+/g, '+')}+Front`;
+                      }}
+                    />
                   </div>
-                  <div className="page-content">
-                    <p>{selectedEvent.page1.content}</p>
-                  </div>
-                  <div className="flip-indicator">
-                    <span className="click-hint">Click to flip →</span>
+                  <div className="brochure-back-large">
+                    <img
+                      src={selectedEvent.backImage}
+                      alt={`${selectedEvent.title} Back Page`}
+                      onError={(e) => {
+                        e.target.src = `https://via.placeholder.com/400x500/${selectedEvent.color.slice(1)}/1a1a1a?text=${selectedEvent.title.replace(/\s+/g, '+')}+Back`;
+                      }}
+                    />
                   </div>
                 </div>
+              </div>
+              
+              <div className="event-details">
+                <p className="event-description">{selectedEvent.description}</p>
+                <p className="event-details-info">{selectedEvent.details}</p>
                 
-                {/* Back Page */}
-                <div className="flip-card-back" onClick={flipCard}>
-                  <div className="page-header">
-                    <div className="page-image">{selectedEvent.page2.image}</div>
-                    <h3>{selectedEvent.page2.title}</h3>
-                    <div className="page-indicator">Page 2 of 2</div>
-                  </div>
-                  <div className="page-content">
-                    <p>{selectedEvent.page2.content}</p>
-                  </div>
-                  <div className="flip-indicator">
-                    <span className="click-hint">← Click to flip back</span>
-                  </div>
-                </div>
+                <button className="flip-btn" onClick={handleFlip}>
+                  {flipped ? '📄 View Front Page' : '📑 View Back Page'}
+                </button>
               </div>
             </div>
           </div>
