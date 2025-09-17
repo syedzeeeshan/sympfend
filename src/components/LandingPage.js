@@ -67,7 +67,7 @@ const LandingPage = () => {
       <TeamPlaceholders />
 
       {/* Registration Section */}
-      <section id="registratio-section" className="registration-section">
+      <section id="register-section" className="registration-section">
         <div className="container">
           <h2>Join Zehinex Symposium 2025</h2>
           <p>Register now to secure your spot at the premier tech event</p>
