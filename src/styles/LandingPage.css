@@ -618,3 +618,29 @@
   background: linear-gradient(45deg, #FFAA00, #FF8800);
 }
 
+.bottom-glass-btn {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  min-width: 180px;
+  padding: 12px 32px;
+  border-radius: 32px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  color: #FFD700;
+  font-weight: 700;
+  font-size: 1.15rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.22), 0 1.5px 4px rgba(255,215,0,0.07);
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s;
+  text-shadow: 0 1px 8px rgba(255,215,0,0.3);
+}
+
+.bottom-glass-btn:hover {
+  background: rgba(255, 255, 255, 0.25);
+  color: #FF8800;
+}
