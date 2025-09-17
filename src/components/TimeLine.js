@@ -88,7 +88,7 @@ const TimeLine = () => {
     },
     { 
       id: 10, 
-      title: "Pixel Lutz", 
+      title: "Pixel Cutz", 
       date: "Sep 09, 2025", 
       time: "Afternoon (1 hr)", 
       description: "A digital art or pixel art creation challenge where participants design creative visuals using limited pixels or tools. Venue: CC2",
@@ -106,10 +106,10 @@ const TimeLine = () => {
     },
     { 
       id: 12, 
-      title: "D.D.D. (Debug, Design, Develop)", 
+      title: "D.2.D. (Dialogue to  Delivery )", 
       date: "Sep 09, 2025", 
       time: "Afternoon (2 hrs)", 
-      description: "A coding challenge that tests participants’ ability to debug existing code, design solutions, and develop working programs. Venue: CSE-B 1st Floor",
+      description: "exciting party game that challenges player to communicate without hearing,  Venue: CSE-B 1st Floor",
       category: "technical",
       icon: "💻"
     }
