@@ -43,6 +43,18 @@ const LandingPage = () => {
             <span className="status-text">Live Now</span>
           </div>
         </div>
+         <button 
+            className="scroll-to-register-btn"
+     onClick={() => {
+    const registerSection = document.getElementById('register-section');
+    if (registerSection) {
+      registerSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  }}
+>
+  Go to Register
+</button>
+  
       </section>
 
       {/* Event Highlights */}
