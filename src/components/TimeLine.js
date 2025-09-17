@@ -7,114 +7,113 @@ const TimeLine = () => {
   const events = [
     { 
       id: 1, 
-      title: "Registration Opens", 
-      date: "Oct 1, 2025", 
-      time: "09:00 AM", 
-      description: "Registration portal goes live for all participants",
-      category: "non-technical",
+      title: "Paper Presentation", 
+      date: "Sep 07, 2025", 
+      time: "Full Day", 
+      description: "Participants present research papers or innovative ideas in front of judges and peers. Venue: Hall",
+      category: "technical",
       icon: "📝"
     },
     { 
       id: 2, 
-      title: "Code Quest", 
-      date: "Oct 15, 2025", 
-      time: "10:00 AM", 
-      description: "Competitive programming challenge with algorithmic problems",
+      title: "Project Expo", 
+      date: "Sep 07, 2025", 
+      time: "Full Day", 
+      description: "A showcase where participants exhibit their innovative projects, prototypes, or solutions to real-world problems. Venue: Hall",
       category: "technical",
       icon: "💻"
     },
     { 
       id: 3, 
-      title: "Web Wizard Competition", 
-      date: "Oct 15, 2025", 
-      time: "11:30 AM", 
-      description: "Full-stack web development competition",
+      title: "Web Vibe", 
+      date: "Sep 07, 2025", 
+      time: "Morning (2 hrs)", 
+      description: "A web development competition where participants build creative and functional web pages or apps in a short time. Venue: CC1",
       category: "technical",
       icon: "🌐"
     },
     { 
       id: 4, 
-      title: "Innovation Pitch", 
-      date: "Oct 15, 2025", 
-      time: "02:00 PM", 
-      description: "Business idea presentation competition",
+      title: "Meme Loader", 
+      date: "Sep 07, 2025", 
+      time: "Morning (1 hr)", 
+      description: "A light-hearted event where participants create funny, clever memes on given topics to entertain the audience. Venue: CC2",
       category: "non-technical",
-      icon: "🚀"
+      icon: "😂"
     },
     { 
       id: 5, 
-      title: "AI Innovation Challenge", 
-      date: "Oct 15, 2025", 
-      time: "03:30 PM", 
-      description: "Machine learning and AI project showcase",
+      title: "Quiz Tronic", 
+      date: "Sep 07, 2025", 
+      time: "Morning (1 hr)", 
+      description: "A technical quiz focusing on programming, electronics, computer science, and problem-solving. Venue: CSE-B 1st Floor",
       category: "technical",
-      icon: "🤖"
+      icon: "❓"
     },
     { 
       id: 6, 
-      title: "Creative Design Studio", 
-      date: "Oct 15, 2025", 
-      time: "04:30 PM", 
-      description: "UI/UX design competition showcasing creativity",
+      title: "Creative Canva", 
+      date: "Sep 07, 2025", 
+      time: "Morning (1 hr)", 
+      description: "A design event where participants create stunning posters, digital flyers, or graphics using Canva or similar tools. Venue: CC1",
       category: "non-technical",
       icon: "🎨"
     },
     { 
       id: 7, 
-      title: "Circuit Master", 
-      date: "Oct 16, 2025", 
-      time: "09:30 AM", 
-      description: "Hardware design and embedded systems challenge",
-      category: "technical",
-      icon: "⚡"
+      title: "Murder Mystery", 
+      date: "Sep 09, 2025", 
+      time: "Morning (1 hr)", 
+      description: "A thrilling event where participants work in teams to solve a fictional crime using clues, logic, and deduction. Venue: CSE-A 1st Floor",
+      category: "non-technical",
+      icon: "🕵️"
     },
     { 
       id: 8, 
-      title: "Tech Talk Marathon", 
-      date: "Oct 16, 2025", 
-      time: "11:00 AM", 
-      description: "Public speaking competition on technology trends",
-      category: "non-technical",
-      icon: "🎤"
+      title: "E-Sports", 
+      date: "Sep 09, 2025", 
+      time: "Afternoon (2 hrs)", 
+      description: "Competitive gaming event featuring popular multiplayer video games. Teams or individuals compete for the highest scores. Venue: CSE-A 3rd Floor",
+      category: "technical",
+      icon: "🎮"
     },
     { 
       id: 9, 
-      title: "Data Analytics Pro", 
-      date: "Oct 16, 2025", 
-      time: "01:00 PM", 
-      description: "Big data analysis and visualization competition",
+      title: "Quiz Buzz", 
+      date: "Sep 09, 2025", 
+      time: "Afternoon (2.5 hrs)", 
+      description: "A fun and fast-paced quiz competition testing participants’ knowledge on general topics, tech, and current affairs. Venue: CSE-A 1st Floor",
       category: "technical",
-      icon: "📊"
+      icon: "🔔"
     },
     { 
       id: 10, 
-      title: "Case Study Challenge", 
-      date: "Oct 16, 2025", 
-      time: "02:30 PM", 
-      description: "Business case analysis and strategic problem-solving",
-      category: "non-technical",
-      icon: "📋"
+      title: "Pixel Lutz", 
+      date: "Sep 09, 2025", 
+      time: "Afternoon (1 hr)", 
+      description: "A digital art or pixel art creation challenge where participants design creative visuals using limited pixels or tools. Venue: CC2",
+      category: "technical",
+      icon: "🖼️"
     },
     { 
       id: 11, 
-      title: "Cyber Security Challenge", 
-      date: "Oct 16, 2025", 
-      time: "04:00 PM", 
-      description: "Ethical hacking and cybersecurity CTF challenges",
-      category: "technical",
-      icon: "🔒"
+      title: "Treasure Hunt", 
+      date: "Sep 09, 2025", 
+      time: "Afternoon (2 hrs)", 
+      description: "A campus-wide puzzle-solving game where teams follow clues, decode riddles, and race to find the hidden treasure. Venue: Main Block",
+      category: "non-technical",
+      icon: "🗝️"
     },
     { 
       id: 12, 
-      title: "Awards & Closing Ceremony", 
-      date: "Oct 16, 2025", 
-      time: "06:00 PM", 
-      description: "Grand finale with awards distribution and networking",
-      category: "non-technical",
-      icon: "🏆"
+      title: "D.D.D. (Debug, Design, Develop)", 
+      date: "Sep 09, 2025", 
+      time: "Afternoon (2 hrs)", 
+      description: "A coding challenge that tests participants’ ability to debug existing code, design solutions, and develop working programs. Venue: CSE-B 1st Floor",
+      category: "technical",
+      icon: "💻"
     }
   ];
-
   // Intersection Observer for scroll animations
   useEffect(() => {
     const observer = new IntersectionObserver(
