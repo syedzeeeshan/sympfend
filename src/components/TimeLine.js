@@ -12,7 +12,7 @@ const TimeLine = () => {
       time: "Full Day", 
       description: "Participants present research papers or innovative ideas in front of judges and peers. Venue: Hall",
       category: "technical",
-      icon: "📝"
+      icon: ""
     },
     { 
       id: 2, 
