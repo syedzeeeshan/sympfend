@@ -51,7 +51,7 @@ const TeamPlaceholders = () => {
       image: "/images/team/muzamil.jpg",
       email: "muzamil@zehinx25.com",
       linkedin: "https://linkedin.com/in/muzamil",
-      bio: "Leading all technical events and programming competitions",
+      bio: "Leading all technical events and programming competitions Mobile:80157 31017",
     },
     {
       id: 7,
@@ -106,22 +106,22 @@ const TeamPlaceholders = () => {
     {
       id: 12,
       name: "Hemanth",
-      role: "Back-End Developer",
+      role: "Technical Leader",
       department: "Technical Team - IV Year",
       image: "/images/team/hemanth.jpg",
       email: "hemanth@zehinx25.com",
       linkedin: "https://linkedin.com/in/hemanth",
-      bio: "Developing server-side applications and database management systems",
+      bio: "Managing and assisting for all technical related activities ",
     },
     {
       id: 13,
       name: "Safa Simin",
-      role: "Back-End Developer",
+      role: "Technical management",
       department: "Technical Team - IV Year",
       image: "/images/team/safa-simin.jpg",
       email: "safa@zehinx25.com",
       linkedin: "https://linkedin.com/in/safasimin",
-      bio: "Backend development and API integration for symposium platforms",
+      bio: "Managing technical coordination along the teams",
     },
   ];
 
