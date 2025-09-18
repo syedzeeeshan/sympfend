@@ -256,7 +256,7 @@ const CircularBrochureGallery = () => {
                 <p className="event-details-info">{selectedEvent.details}</p>
                 
                 <button className="flip-btn" onClick={handleFlip}>
-                  {flipped ? '📄 View Front Page' : '📑 View Back Page'}
+                  {flipped ? 'Click To View Next Page' : ' Click To View Next Page'}
                 </button>
               </div>
             </div>
