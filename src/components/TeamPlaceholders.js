@@ -68,7 +68,7 @@ const TeamPlaceholders = () => {
       name: "Amin Howth",
       role: "Non-Technical Coordinator",
       department: "Student Forum - IV Year",
-      image: "/images/team/amin-howth.jpg",
+      image: "/images/team/amin-howth.JPG",
       email: "amin@zehinx25.com",
       linkedin: "https://linkedin.com/in/aminhowth",
       bio: "Managing creative events, presentations, and non-technical competitions",
