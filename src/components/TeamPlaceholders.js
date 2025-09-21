@@ -48,7 +48,7 @@ const TeamPlaceholders = () => {
       name: "Muzamil",
       role: "Technical Leader",
       department: "Student Forum - IV Year",
-      image: "/images/team/muzamil.jpg",
+      image: "/images/team/muzamil.jpeg",
       email: "muzamil@zehinx25.com",
       linkedin: "https://linkedin.com/in/muzamil",
       bio: "Leading all technical events and programming competitions.  Mobile:+91 80157-31017",
